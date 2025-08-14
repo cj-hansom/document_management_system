@@ -81,7 +81,8 @@ A simplified Document Connector service built with **FastAPI**, **PostgreSQL**, 
 ```bash
 uvicorn app.main:app --reload
 
-
+---
 ##   Running Authumated Test
-
+```bash
 pytest -v
+```
