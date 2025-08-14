@@ -1,0 +1,2376 @@
+2025-08-14 01:24:58,416 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 01:26:02,093 - app.core.exceptions - WARNING - HTTPException 401: Could not validate credentials
+2025-08-14 01:26:26,573 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': {'title': 'Test Doc', 'original_text': 'Some content'}}, {'type': 'missing', 'loc': ('body', 'email'), 'msg': 'Field required', 'input': {'title': 'Test Doc', 'original_text': 'Some content'}}, {'type': 'missing', 'loc': ('body', 'password'), 'msg': 'Field required', 'input': {'title': 'Test Doc', 'original_text': 'Some content'}}]
+2025-08-14 01:26:41,387 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-14 01:27:30,885 - app.core.exceptions - WARNING - Validation error: [{'type': 'model_attributes_type', 'loc': ('body',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': b'----------------------------394221397391311644131440\r\nContent-Disposition: form-data; name="username"\r\n\r\nalice\r\n----------------------------394221397391311644131440\r\nContent-Disposition: form-data; name="password"\r\n\r\nSecret123!\r\n----------------------------394221397391311644131440--\r\n'}]
+2025-08-14 01:28:45,338 - app.core.exceptions - WARNING - HTTPException 401: Incorrect username or password
+2025-08-14 01:31:14,712 - app.core.exceptions - WARNING - HTTPException 401: Could not validate credentials
+2025-08-14 01:32:13,328 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': None}, {'type': 'missing', 'loc': ('body', 'password'), 'msg': 'Field required', 'input': None}]
+2025-08-14 01:32:47,842 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': None}, {'type': 'missing', 'loc': ('body', 'password'), 'msg': 'Field required', 'input': None}]
+2025-08-14 01:34:22,445 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': None}, {'type': 'missing', 'loc': ('body', 'password'), 'msg': 'Field required', 'input': None}]
+2025-08-14 01:34:39,230 - app.api.document - INFO - Doc 2dba5b91-373c-498a-89f9-f27f83c8d57b processed into 1 chunk(s)
+2025-08-14 01:34:39,234 - app.core.exceptions - ERROR - Unhandled exception
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 77, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    |     response: Response = await call_next(request)
+    |                          ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    |     raise app_exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 328, in app
+    |     content = await serialize_response(
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<9 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 177, in serialize_response
+    |     raise ResponseValidationError(
+    |         errors=_normalize_errors(errors), body=response_content
+    |     )
+    | fastapi.exceptions.ResponseValidationError: 1 validation errors:
+    |   {'type': 'string_type', 'loc': ('response', 'user_id'), 'msg': 'Input should be a valid string', 'input': UUID('b5f5a4d4-cda3-4d88-b2c9-c6ec08309257')}
+    | 
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    response: Response = await call_next(request)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 328, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 177, in serialize_response
+    raise ResponseValidationError(
+        errors=_normalize_errors(errors), body=response_content
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'string_type', 'loc': ('response', 'user_id'), 'msg': 'Input should be a valid string', 'input': UUID('b5f5a4d4-cda3-4d88-b2c9-c6ec08309257')}
+
+2025-08-14 01:55:28,001 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 01:55:31,654 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 01:55:45,881 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 01:55:49,810 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 01:55:50,277 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 01:55:54,173 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 01:56:16,647 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('c2fa15f3-f699-486a-890c-784ff23826... (expected str, got UUID)
+2025-08-14 01:56:16,669 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 01:59:19,625 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 01:59:23,288 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 01:59:25,629 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('3566ebe1-7d48-4027-a5fa-2ebd072bd2... (expected str, got UUID)
+2025-08-14 01:59:25,637 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 01:59:43,304 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 01:59:47,126 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:01:13,846 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:01:17,584 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:01:22,475 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('77c6947d-505b-4936-93db-4fe624d6c3... (expected str, got UUID)
+2025-08-14 02:01:22,495 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:01:54,288 - app.core.exceptions - WARNING - HTTPException 401: Could not validate credentials
+2025-08-14 02:02:23,869 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-14 02:03:22,496 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': None}, {'type': 'missing', 'loc': ('body', 'password'), 'msg': 'Field required', 'input': None}]
+2025-08-14 02:03:34,311 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('97bc02f2-5e99-4a9c-97c5-cad8c9376e... (expected str, got UUID)
+2025-08-14 02:03:34,327 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:04:10,692 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:04:13,896 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:04:30,172 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:04:33,674 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:04:34,926 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('c20d7f1e-8104-4cc3-8841-4c6e6f8af8... (expected str, got UUID)
+2025-08-14 02:04:34,943 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:04:45,353 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:04:48,789 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:04:51,177 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'user_id'), 'msg': 'Field required', 'input': {'title': 'Notes', 'original_text': 'This is a long text that we will chunk'}}]
+2025-08-14 02:05:13,695 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'user_id'), 'msg': 'Field required', 'input': {'title': 'Notes', 'original_text': 'This is a long text that we will chunk'}}]
+2025-08-14 02:05:38,634 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:05:42,570 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:05:42,629 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('26e7680f-7ab1-4145-be24-4692f35b12... (expected str, got UUID)
+2025-08-14 02:05:42,646 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:05:52,592 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:05:55,962 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:05:58,420 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'user_id'), 'msg': 'Field required', 'input': {'title': 'Notes', 'original_text': 'This is a long text that we will chunk'}}]
+2025-08-14 02:06:06,745 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:06:09,758 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:06:12,861 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('869942a4-bbe2-43ac-b1d8-28673d73bf... (expected str, got UUID)
+2025-08-14 02:06:12,875 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:12:02,407 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:12:06,212 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:12:10,323 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('4457feec-8879-4f49-9c26-b215cadadb... (expected str, got UUID)
+2025-08-14 02:12:10,354 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:14:46,334 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('e7471534-9a91-4178-94d5-744aaeda38... (expected str, got UUID)
+2025-08-14 02:14:46,350 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:20:14,284 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:20:18,343 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:20:23,615 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('a3dda135-8715-4198-a1dd-0bc21655c6... (expected str, got UUID)
+2025-08-14 02:20:23,639 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:20:31,640 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:20:34,802 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:20:39,801 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('c43e6e6c-9508-447f-aa20-0d29a63cf6... (expected str, got UUID)
+2025-08-14 02:20:39,820 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:23:59,507 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:24:18,430 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:30:59,679 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('fbf0f206-0ded-4936-9666-866eb54484... (expected str, got UUID)
+2025-08-14 02:30:59,698 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:32:18,577 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:33:53,858 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:33:57,594 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:34:33,476 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-14 02:35:27,976 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('df4d759a-0cb6-4279-a389-a63be0e1f1... (expected str, got UUID)
+2025-08-14 02:35:28,007 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:36:50,563 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:36:54,505 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:37:00,233 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('693a0fee-0219-47b0-a48e-c8b0ca696f... (expected str, got UUID)
+2025-08-14 02:37:00,250 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:44:34,080 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:44:37,392 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:44:43,373 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('8db1c6db-5a1e-40be-8947-ec6e0837b7... (expected str, got UUID)
+2025-08-14 02:44:43,392 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:45:16,003 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:45:19,309 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:45:21,966 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 21, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('6974da73-5f2e-4c7d-a27f-5f411550be... (expected str, got UUID)
+2025-08-14 02:45:21,988 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:47:27,989 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:47:31,779 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:47:38,188 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 29, in create_document
+    row = await database.fetch_one(documents.select().where(documents.c.id == doc_id))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 182, in fetch_one
+    return await connection.fetch_one(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 299, in fetch_one
+    return await self._connection.fetch_one(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 113, in fetch_one
+    row = await self._connection.fetchrow(query_str, *args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 748, in fetchrow
+    data = await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2004, in _do_execute
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 432, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "asyncpg\\protocol\\protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedFunctionError: operator does not exist: character varying = uuid
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2025-08-14 02:47:38,206 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 02:49:46,184 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 02:50:05,974 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 03:09:14,551 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 03:09:18,415 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 03:19:55,719 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 03:19:59,389 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 03:22:25,145 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 03:22:28,811 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 03:33:27,825 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 05:02:35,644 - app.core.exceptions - WARNING - HTTPException 401: Could not validate credentials
+2025-08-14 05:03:23,968 - app.core.exceptions - ERROR - Unhandled exception
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 77, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    |     response: Response = await call_next(request)
+    |                          ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    |     raise app_exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    |     user = await database.fetch_one(query)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    |     async with self.connection() as connection:
+    |                ~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    |     raise e
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    |     await self._connection.acquire()
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    |     assert self._database._pool is not None, "DatabaseBackend is not running"
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | AssertionError: DatabaseBackend is not running
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    response: Response = await call_next(request)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    user = await database.fetch_one(query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    async with self.connection() as connection:
+               ~~~~~~~~~~~~~~~^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    raise e
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    await self._connection.acquire()
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    assert self._database._pool is not None, "DatabaseBackend is not running"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: DatabaseBackend is not running
+2025-08-14 05:03:32,590 - app.core.exceptions - ERROR - Unhandled exception
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 77, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    |     response: Response = await call_next(request)
+    |                          ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    |     raise app_exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    |     user = await database.fetch_one(query)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    |     async with self.connection() as connection:
+    |                ~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    |     raise e
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    |     await self._connection.acquire()
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    |     assert self._database._pool is not None, "DatabaseBackend is not running"
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | AssertionError: DatabaseBackend is not running
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    response: Response = await call_next(request)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    user = await database.fetch_one(query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    async with self.connection() as connection:
+               ~~~~~~~~~~~~~~~^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    raise e
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    await self._connection.acquire()
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    assert self._database._pool is not None, "DatabaseBackend is not running"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: DatabaseBackend is not running
+2025-08-14 05:08:09,584 - app.core.exceptions - ERROR - Unhandled exception
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 77, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    |     response: Response = await call_next(request)
+    |                          ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    |     raise app_exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    |     user = await database.fetch_one(query)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    |     async with self.connection() as connection:
+    |                ~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    |     raise e
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    |     await self._connection.acquire()
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    |     assert self._database._pool is not None, "DatabaseBackend is not running"
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | AssertionError: DatabaseBackend is not running
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    response: Response = await call_next(request)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    user = await database.fetch_one(query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    async with self.connection() as connection:
+               ~~~~~~~~~~~~~~~^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    raise e
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    await self._connection.acquire()
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    assert self._database._pool is not None, "DatabaseBackend is not running"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: DatabaseBackend is not running
+2025-08-14 05:08:38,434 - app.core.exceptions - ERROR - Unhandled exception
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 77, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    |     response: Response = await call_next(request)
+    |                          ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    |     raise app_exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    |     user = await database.fetch_one(query)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    |     async with self.connection() as connection:
+    |                ~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    |     raise e
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    |     await self._connection.acquire()
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    |     assert self._database._pool is not None, "DatabaseBackend is not running"
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | AssertionError: DatabaseBackend is not running
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    response: Response = await call_next(request)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    user = await database.fetch_one(query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    async with self.connection() as connection:
+               ~~~~~~~~~~~~~~~^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    raise e
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    await self._connection.acquire()
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    assert self._database._pool is not None, "DatabaseBackend is not running"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: DatabaseBackend is not running
+2025-08-14 05:11:46,566 - app.core.exceptions - ERROR - Unhandled exception
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 77, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    |     response: Response = await call_next(request)
+    |                          ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    |     raise app_exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    |     user = await database.fetch_one(query)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    |     async with self.connection() as connection:
+    |                ~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    |     raise e
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    |     await self._connection.acquire()
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    |     assert self._database._pool is not None, "DatabaseBackend is not running"
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | AssertionError: DatabaseBackend is not running
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    response: Response = await call_next(request)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    user = await database.fetch_one(query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    async with self.connection() as connection:
+               ~~~~~~~~~~~~~~~^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    raise e
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    await self._connection.acquire()
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    assert self._database._pool is not None, "DatabaseBackend is not running"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: DatabaseBackend is not running
+2025-08-14 14:37:54,241 - app.core.exceptions - ERROR - Unhandled exception
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 77, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    |     response: Response = await call_next(request)
+    |                          ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    |     raise app_exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    |     user = await database.fetch_one(query)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    |     async with self.connection() as connection:
+    |                ~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    |     raise e
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    |     await self._connection.acquire()
+    |   File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    |     assert self._database._pool is not None, "DatabaseBackend is not running"
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | AssertionError: DatabaseBackend is not running
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\middleware\request_id.py", line 9, in request_id_middleware
+    response: Response = await call_next(request)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 63, in login
+    user = await database.fetch_one(query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    async with self.connection() as connection:
+               ~~~~~~~~~~~~~~~^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    raise e
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    await self._connection.acquire()
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    assert self._database._pool is not None, "DatabaseBackend is not running"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: DatabaseBackend is not running
+2025-08-14 14:39:12,373 - app.api.auth - ERROR - Database error while fetching user 'alice': DatabaseBackend is not running
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 22, in get_user
+    return await database.fetch_one(query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    async with self.connection() as connection:
+               ~~~~~~~~~~~~~~~^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    raise e
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    await self._connection.acquire()
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    assert self._database._pool is not None, "DatabaseBackend is not running"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: DatabaseBackend is not running
+2025-08-14 14:39:12,380 - app.core.exceptions - WARNING - HTTPException 401: Incorrect username or password
+2025-08-14 14:43:36,036 - app.api.auth - ERROR - Database error while fetching user 'alice': DatabaseBackend is not running
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 22, in get_user
+    return await database.fetch_one(query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 181, in fetch_one
+    async with self.connection() as connection:
+               ~~~~~~~~~~~~~~~^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 267, in __aenter__
+    raise e
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 264, in __aenter__
+    await self._connection.acquire()
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 93, in acquire
+    assert self._database._pool is not None, "DatabaseBackend is not running"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: DatabaseBackend is not running
+2025-08-14 14:43:36,044 - app.core.exceptions - WARNING - HTTPException 401: Incorrect username or password
+2025-08-14 14:47:15,647 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 14:47:15,648 - root - INFO - Database connection established successfully.
+2025-08-14 14:47:21,744 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-14 14:52:13,931 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 14:52:13,941 - root - INFO - Database connection closed successfully.
+2025-08-14 14:52:17,307 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 14:52:17,308 - root - INFO - Database connection established successfully.
+2025-08-14 14:57:29,952 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 14:57:29,953 - root - INFO - Database connection closed successfully.
+2025-08-14 14:57:33,445 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 14:57:33,446 - root - INFO - Database connection established successfully.
+2025-08-14 15:05:19,711 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:05:19,712 - root - INFO - Database connection closed successfully.
+2025-08-14 15:05:23,473 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:05:23,474 - root - INFO - Database connection established successfully.
+2025-08-14 15:08:58,216 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:08:58,222 - root - INFO - Database connection closed successfully.
+2025-08-14 15:09:02,066 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:09:02,066 - root - INFO - Database connection established successfully.
+2025-08-14 15:16:15,614 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:16:15,616 - root - INFO - Database connection closed successfully.
+2025-08-14 15:16:18,871 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:16:18,871 - root - INFO - Database connection established successfully.
+2025-08-14 15:18:05,245 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:18:05,250 - root - INFO - Database connection closed successfully.
+2025-08-14 15:18:08,931 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:18:08,932 - root - INFO - Database connection established successfully.
+2025-08-14 15:26:33,955 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:26:33,957 - root - INFO - Database connection closed successfully.
+2025-08-14 15:26:38,254 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:26:38,255 - root - INFO - Database connection established successfully.
+2025-08-14 15:30:40,767 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:30:40,768 - root - INFO - Database connection closed successfully.
+2025-08-14 15:30:45,569 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:30:45,570 - root - INFO - Database connection established successfully.
+2025-08-14 15:32:48,787 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:32:48,789 - root - INFO - Database connection closed successfully.
+2025-08-14 15:32:53,835 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:32:53,835 - root - INFO - Database connection established successfully.
+2025-08-14 15:34:37,294 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:34:37,300 - root - INFO - Database connection closed successfully.
+2025-08-14 15:34:40,486 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:34:40,487 - root - INFO - Database connection established successfully.
+2025-08-14 15:38:53,075 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:38:53,078 - root - INFO - Database connection closed successfully.
+2025-08-14 15:38:56,390 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:38:56,391 - root - INFO - Database connection established successfully.
+2025-08-14 15:45:53,458 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:45:53,460 - root - INFO - Database connection closed successfully.
+2025-08-14 15:45:57,323 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:45:57,323 - root - INFO - Database connection established successfully.
+2025-08-14 15:52:15,664 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:52:15,665 - root - INFO - Database connection closed successfully.
+2025-08-14 15:52:19,022 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 15:52:19,023 - root - INFO - Database connection established successfully.
+2025-08-14 16:04:04,863 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:04:04,864 - root - INFO - Database connection closed successfully.
+2025-08-14 16:04:08,662 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:04:08,663 - root - INFO - Database connection established successfully.
+2025-08-14 16:11:21,796 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:11:21,797 - root - INFO - Database connection closed successfully.
+2025-08-14 16:11:25,528 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:11:25,529 - root - INFO - Database connection established successfully.
+2025-08-14 16:21:57,400 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:21:57,400 - root - INFO - Database connection closed successfully.
+2025-08-14 16:22:00,974 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:22:00,975 - root - INFO - Database connection established successfully.
+2025-08-14 16:29:23,728 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:29:23,730 - root - INFO - Database connection closed successfully.
+2025-08-14 16:29:27,245 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:29:27,246 - root - INFO - Database connection established successfully.
+2025-08-14 16:30:22,849 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:30:22,853 - root - INFO - Database connection closed successfully.
+2025-08-14 16:30:26,311 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:30:26,312 - root - INFO - Database connection established successfully.
+2025-08-14 16:31:04,433 - app.core.exceptions - WARNING - HTTPException 401: Could not validate credentials
+2025-08-14 16:33:48,284 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-14 16:34:15,240 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': None}, {'type': 'missing', 'loc': ('body', 'password'), 'msg': 'Field required', 'input': None}]
+2025-08-14 16:34:49,332 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 20, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('4912c0a3-72ec-466c-b633-775d48ca65... (expected str, got UUID)
+2025-08-14 16:34:49,353 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 16:48:56,086 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:48:56,088 - root - INFO - Database connection closed successfully.
+2025-08-14 16:48:59,987 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:48:59,988 - root - INFO - Database connection established successfully.
+2025-08-14 16:49:04,527 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 20, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('44f8b28b-187e-4f62-8d72-8344510258... (expected str, got UUID)
+2025-08-14 16:49:04,547 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 16:50:49,431 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:50:49,438 - root - INFO - Database connection closed successfully.
+2025-08-14 16:51:56,629 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:51:59,200 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 20, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('a4f95bee-9122-4f0c-b628-d5f1d22b45... (expected str, got UUID)
+2025-08-14 16:51:59,216 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 16:55:36,360 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:55:40,723 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 16:55:55,402 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 20, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('27d036f1-c61e-4408-a565-ea4112bd7d... (expected str, got UUID)
+2025-08-14 16:55:55,423 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 17:12:04,898 - app.core.exceptions - WARNING - HTTPException 401: Could not validate credentials
+2025-08-14 17:12:46,004 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-14 17:13:34,815 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': None}, {'type': 'missing', 'loc': ('body', 'password'), 'msg': 'Field required', 'input': None}]
+2025-08-14 17:15:21,013 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:15:25,245 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:15:26,445 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': None}, {'type': 'missing', 'loc': ('body', 'password'), 'msg': 'Field required', 'input': None}]
+2025-08-14 17:16:47,622 - app.api.document - ERROR - Failed to create document
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got UUID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\document.py", line 20, in create_document
+    await database.execute(
+    ...<6 lines>...
+    )
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: UUID('bd89a5b9-8967-4162-85ee-9e1cb832b6... (expected str, got UUID)
+2025-08-14 17:16:47,635 - app.core.exceptions - ERROR - HTTPException 500: Failed to create document
+2025-08-14 17:17:07,614 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:17:10,520 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:17:33,650 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:17:37,123 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:17:37,123 - root - INFO - Database connection established successfully.
+2025-08-14 17:47:41,317 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:47:41,318 - root - INFO - Database connection closed successfully.
+2025-08-14 17:47:44,336 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:47:44,336 - root - INFO - Database connection established successfully.
+2025-08-14 17:49:06,438 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:49:06,441 - root - INFO - Database connection closed successfully.
+2025-08-14 17:49:09,622 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:49:09,623 - root - INFO - Database connection established successfully.
+2025-08-14 17:49:55,873 - app.core.exceptions - WARNING - HTTPException 401: Could not validate credentials
+2025-08-14 17:55:19,780 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:55:19,781 - root - INFO - Database connection closed successfully.
+2025-08-14 17:55:22,995 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:55:22,995 - root - INFO - Database connection established successfully.
+2025-08-14 17:56:26,905 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:56:26,911 - root - INFO - Database connection closed successfully.
+2025-08-14 17:56:30,536 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:56:30,537 - root - INFO - Database connection established successfully.
+2025-08-14 17:58:56,289 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:58:56,292 - root - INFO - Database connection closed successfully.
+2025-08-14 17:58:59,925 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:58:59,926 - root - INFO - Database connection established successfully.
+2025-08-14 17:59:25,952 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:59:25,961 - root - INFO - Database connection closed successfully.
+2025-08-14 17:59:29,355 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 17:59:29,356 - root - INFO - Database connection established successfully.
+2025-08-14 18:01:54,264 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:01:54,268 - root - INFO - Database connection closed successfully.
+2025-08-14 18:01:57,238 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:01:57,239 - root - INFO - Database connection established successfully.
+2025-08-14 18:02:17,778 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:02:17,782 - root - INFO - Database connection closed successfully.
+2025-08-14 18:02:21,480 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:02:21,481 - root - INFO - Database connection established successfully.
+2025-08-14 18:04:43,847 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:04:43,857 - root - INFO - Database connection closed successfully.
+2025-08-14 18:04:48,286 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:04:48,287 - root - INFO - Database connection established successfully.
+2025-08-14 18:16:09,642 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:16:09,645 - root - INFO - Database connection closed successfully.
+2025-08-14 18:16:12,858 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:16:17,812 - app.core.exceptions - WARNING - HTTPException 401: Could not validate credentials
+2025-08-14 18:17:07,203 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-14 18:18:25,788 - app.core.exceptions - WARNING - Validation error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': None}, {'type': 'missing', 'loc': ('body', 'password'), 'msg': 'Field required', 'input': None}]
+2025-08-14 18:24:17,981 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:25:00,794 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:27:33,028 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:27:35,894 - databases - INFO - Connected to database postgresql://postgres:********@localhost:5432/fastapidb
+2025-08-14 18:30:01,428 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-14 18:30:01,845 - app.api.auth - ERROR - Unexpected error during registration for 'innocent': duplicate key value violates unique constraint "ix_users_username"
+DETAIL:  Key (username)=(innocent) already exists.
+Traceback (most recent call last):
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\app\api\auth.py", line 101, in register
+    created_user = await database.fetch_one(query)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 182, in fetch_one
+    return await connection.fetch_one(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\core.py", line 299, in fetch_one
+    return await self._connection.fetch_one(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\databases\backends\postgres.py", line 113, in fetch_one
+    row = await self._connection.fetchrow(query_str, *args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 748, in fetchrow
+    data = await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\DELL\software_test_folder\fastapi-doc-connector\fastapi-doc-connector\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 206, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "ix_users_username"
+DETAIL:  Key (username)=(innocent) already exists.
+2025-08-14 18:30:01,859 - app.core.exceptions - ERROR - HTTPException 500: An unexpected error occurred while registering. Please try again later.
+2025-08-14 18:44:18,416 - databases - INFO - Disconnected from database postgresql://postgres:********@localhost:5432/fastapidb
